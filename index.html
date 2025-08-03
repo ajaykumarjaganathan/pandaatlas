@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Panda Atlas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS & Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      color: white;
+      scroll-behavior: smooth;
+    }
+
+    .hero-section {
+      background: url('IMAGE.jpg') no-repeat center center;
+      background-size: cover;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      text-align: center;
+      padding-bottom: 40px;
+    }
+
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-slogan {
+  position: absolute;
+  top: 50%;                  /* vertical center */
+  left: 50%;                 /* horizontal center */
+  transform: translate(-50%, -50%);
+ 
+  padding: 20px 10px;
+  max-width: 900px;
+  width: 90%;                /* responsive width */
+  color: rgb(255, 255, 255);
+  text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.7); /* better readability */
+  border-radius: 12px;
+  z-index: 5;
+ 
+}
+
+.hero-slogan h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 58px;
+  margin-bottom: 15px;
+}
+
+.hero-slogan p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 40px;
+  line-height: 1.9;
+}
+  .hero-slogan p {
+    font-size: 16px;
+  }
+}
+
+
+    .booking-form {
+      background-color: rgba(5, 5, 5, 0.95);
+      padding: 25px;
+      border-radius: 40px;
+      width: 95%;
+      max-width: 1200px;
+      max-height: 800px;
+      margin: 0 auto;
+      color: #000;
+    }
+
+    .custom-navbar {
+ background: rgba(255, 255, 255, 0.6);
+
+      padding-top: 10px;
+      padding-bottom: 15px;
+      position: absolute;
+      width: 100%;
+      top: 1;
+      z-index: 10;
+    }
+
+    .navbar-nav .nav-link {
+    color: white !important;
+    margin-right: 10px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    font-size: 18px;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ffc107 !important;
+    }
+
+    .btn-outline-light {
+      border-color: white;
+      color: white;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    .btn-outline-light:hover {
+      background-color: white;
+      color: black;
+    }
+/*
+ .login-btn-navbar {
+  background: linear-gradient(45deg, #d4af37, #b8860b);
+  color: white !important;
+  padding: 6px 22px;
+  border-radius: 22px;
+  font-weight: 600;
+  border: none;
+  margin-left: 15px;
+  min-width: 92px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.login-btn-navbar:hover {
+  background: linear-gradient(45deg, #ffcc00, #daa520);
+  transform: scale(1.05);
+}
+  */
+
+
+    .social-icons-nav {
+      display: flex;
+      gap: 10px;
+      margin-right: 12px;
+    }
+
+    .social-icons-nav a {
+      color: white;
+      font-size: 1.3rem;
+      text-shadow: 1px 1px 6px #0006;
+    }
+
+    .social-icons-nav .bi-facebook { color: #3b5998; }
+    .social-icons-nav .bi-whatsapp { color: #25d366; }
+    .social-icons-nav .bi-youtube { color: #ff0000; }
+  </style>
+</head>
+<body>
+  
+
+<!-- Link Bootstrap CSS in your <head> -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+  .custom-navbar {
+    background-color: #2e2e2e; /* dark background for contrast */
+    color: white;
+    padding: 10px 40px;
+  }
+  .nav-link {
+    color: #ccc !important;
+    font-weight: 600;
+    margin: 0 12px;
+  }
+  .nav-link.active {
+    color: #cbb26a !important; /* Highlighted like 'Home' */
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+    color: white;
+  }
+  .contact-icon {
+    background-color: #cbb26a;
+    padding: 6px;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  .contact-text {
+    line-height: 1.1;
+  }
+  .logo-text {
+    color: white;
+    margin-left: 10px;
+    line-height: 1.2;
+  }
+</style>
+
+<!-- Navbar -->
+<nav class="custom-navbar d-flex align-items-center justify-content-between flex-wrap">
+  <!-- Left: Navigation -->
+  <div class="d-flex align-items-center">
+    <ul class="navbar-nav flex-row">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#secondpage">Rooms</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#Gallery">Gallery</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#Contact">Contact</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Center: Logo -->
+  <div class="d-flex align-items-center">
+ 
+  <img src="logo.png" alt="Logo" style="width:100%; max-width: 200px; height:60px;">
+</div>
+
+    
+    </div>
+  </div>
+  <!-- Login Botton-->
+  <div class="d-flex align-items-center">
+    <a href="login.php" class="btn btn-warning w-100 fw-bold">
+           Admin Login
+        </a>
+    
+    </div>
+  </div>
+
+
+</div>
+</nav>
+
+<!-- banner on center -->
+<div class="hero-banner">
+ 
+
+  <div class="hero-slogan">
+    <h1>Where Comfort Meets Convenience.</h1>
+    <p>Find handpicked hotels in your dream destinations. Secure your stay instantly and travel with confidence, knowing you’ve booked the best.</p>
+  </div>
+</div>
+
+
+<!-- Hero Section with Booking + Search Button -->
+<div class="hero-section">
+  <div class="booking-form text-dark text-start">
+    <div class="row g-3 align-items-end">
+      <div class="col-md-3">
+        <label class="form-label mb-2"><strong>Check-In</strong></label>
+        <input type="date" name="checkin" class="form-control" required>
+      </div>
+      <div class="col-md-3">
+        <label class="form-label mb-2"><strong>Check-Out</strong></label>
+        <input type="date" name="checkout" class="form-control" required>
+      </div>
+      <div class="col-md-4">
+        <label class="form-label mb-1"><strong>Guests and Rooms</strong></label>
+        <div class="row g-2">
+          <div class="col-4"><input type="number" id="adults" name="adults" class="form-control" min="1" value="1" placeholder="Adults"></div>
+          <div class="col-4"><input type="number" id="children" name="children" class="form-control" min="0" value="0" placeholder="Children"></div>
+          <div class="col-4"><input type="number" id="rooms" name="rooms" class="form-control" min="1" value="1" placeholder="Rooms"></div>
+        </div>
+      </div>
+      <div class="col-md-2 text-center">
+        <a href="rooms.html" class="btn btn-warning w-100 fw-bold">
+          <i class="bi bi-search me-1"></i> Search
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="secondpage" class="bg-light"></section>
+
+<!-- Design & Detailing Section -->
+<div class="container py-5">
+  <div class="row align-items-center justify-content-center">
+    <!-- Image Left -->
+    <div class="col-md-6 mb-4 mb-md-0 d-flex justify-content-center">
+      <div class="ratio ratio-1x1" style="max-width: 400px; width: 100%;">
+        <img src="lobby 1.jpg" alt="Design & Detailing" class="img-fluid rounded" style="object-fit: cover; border-radius: 12px;">
+      </div>
+    </div>
+    <!-- Text Right -->
+    <div class="col-md-6 d-flex flex-column justify-content-center">
+      <h2 class="text-dark text-center text-md-start" style="font-family: Georgia, serif; font-size: 2.2rem;">
+        Design &<br>Detailing
+      </h2>
+      <hr style="width: 60px; border: 1px solid #d8b67e; margin: 0.5rem 0 1rem 0;">
+      <p class="text-dark text-center text-md-start" style="font-family: Georgia, serif; font-size: 1.05rem; line-height: 1.75;">
+        The unique carved and textured exterior resembles the great temples of the Chola
+         period – The Brihadeshwarar and many others in the Thanjavur district. <br><br>
+        Sangam, the grand lobby, follows a temple cloister design. The pristine expanse of the pastel-hued lobby is interspersed with Dravidian pillars positioned 
+        symmetrically. <br><br>
+        Traditional stone carvers and sculptors from Tamil Nadu have contributed to the inimitable interiors of the hotel in the form of visual motifs influenced by Chola themes.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Sustainability Section -->
+<div class="container py-5">
+  <div class="row align-items-center justify-content-center">
+    <!-- Text Left -->
+    <div class="col-md-6 d-flex flex-column justify-content-center">
+      <h2 class="text-dark text-center text-md-start" style="font-family: Georgia, serif; font-size: 2.2rem;">
+        Sustainability
+      </h2>
+      <hr style="width: 60px; border: 1px solid #d8b67e; margin: 0.5rem 0 1rem 0;">
+      <p class="text-dark text-center text-md-start" style="font-family: Georgia, serif; font-size: 1.05rem; line-height: 1.75;">
+        ITC Grand Chola is <strong>LEED Platinum</strong> (under existing building) & <strong>LEED Zero Carbon Certified Hotel</strong>, currently meets close to entire electrical energy demand through self-owned wind farms. <br><br>
+        It also achieves almost complete recycling of waste generated by hotel operations. Many such initiatives help the hotel deliver planet positive experiences.
+      </p>
+    </div>
+    <!-- Image Right -->
+    <div class="col-md-6 mt-4 mt-md-0 d-flex justify-content-center">
+      <div class="ratio ratio-1x1" style="max-width: 400px; width: 100%;">
+        <img src="sustainable.jpg" alt="Sustainability" class="img-fluid rounded" style="object-fit: cover; border-radius: 12px;">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Cuisine section-->
+<div class="container py-5">
+  <div class="row align-items-center justify-content-center">
+    <!-- Image Left -->
+    <div class="col-md-6 mb-4 mb-md-0 d-flex justify-content-center">
+      <div class="ratio ratio-1x1" style="max-width: 400px; width: 100%;">
+        <img src="cuisine.jpg" alt="Cuisine" class="img-fluid rounded" style="object-fit: cover; border-radius: 12px;">
+      </div>
+    </div>
+    <!-- Text Right -->
+    <div class="col-md-6 d-flex flex-column justify-content-center">
+      <h2 class="text-dark text-center text-md-start" style="font-family: Georgia, serif; font-size: 2.2rem;">
+        Culinary<br>Excellence
+      </h2>
+      <hr style="width: 60px; border: 1px solid #d8b67e; margin: 0.5rem 0 1rem 0;">
+      <p class="text-dark text-center text-md-start" style="font-family: Georgia, serif; font-size: 1.05rem; line-height: 1.75;">
+        ITC Grand Chola offers an extraordinary culinary journey with a blend of traditional South Indian flavors and international gourmet experiences. <br><br>
+        From the authentic Chettinad delicacies at “Madras Pavilion” to the lavish global buffet at “The Cafe Mercara Express,” each dish is crafted with passion and sustainability in mind. <br><br>
+        The chefs combine age-old recipes with modern techniques, using locally sourced organic ingredients to ensure each meal is a celebration of taste and heritage.
+      </p>
+    </div>
+  </div>
+</div>
+<!-- Gallery Section -->
+ <section id="Gallery" class="bg-light"></section>
+<section id="Gallery" class="bg-light py-5">
+  <div class="container">
+<h2 class="text-dark text-center" style="font-family: Georgia, serif; font-size: 2.2rem;">
+  Gallery
+</h2>
+<br>
+    <div class="row g-4 justify-content-center">
+
+      <!-- Gallery Image  -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <a class="thumbnail" href="#" data-bs-toggle="modal" data-bs-target="#image-gallery"
+           data-image="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg">
+          <img class="img-thumbnail w-100"
+               src="g1.jpg"
+               alt="Image 1">
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-12">
+        <a class="thumbnail" href="#" data-bs-toggle="modal" data-bs-target="#image-gallery"
+           data-image="https://images.pexels.com/photos/158971/pexels-photo-158971.jpeg">
+          <img class="img-thumbnail w-100"
+               src="g2.jpg"
+               alt="Image 2">
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-12">
+        <a class="thumbnail" href="#" data-bs-toggle="modal" data-bs-target="#image-gallery"
+           data-image="https://images.pexels.com/photos/305070/pexels-photo-305070.jpeg">
+          <img class="img-thumbnail w-100"
+               src="g3.jpg"
+               alt="Image 3">
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-12">
+        <a class="thumbnail" href="#" data-bs-toggle="modal" data-bs-target="#image-gallery"
+           data-image="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg">
+          <img class="img-thumbnail w-100"
+               src="g4.jpg"
+               alt="Image 4">
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-12">
+        <a class="thumbnail" href="#" data-bs-toggle="modal" data-bs-target="#image-gallery"
+           data-image="https://images.pexels.com/photos/158971/pexels-photo-158971.jpeg">
+          <img class="img-thumbnail w-100"
+               src="g5.jpg"
+               alt="Image 5">
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-12">
+        <a class="thumbnail" href="#" data-bs-toggle="modal" data-bs-target="#image-gallery"
+           data-image="https://images.pexels.com/photos/305070/pexels-photo-305070.jpeg">
+          <img class="img-thumbnail w-100"
+               src="g6.jpg"
+               alt="Image 6">
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact Section -->
+<!-- Contact Section with Image on Right -->
+  <section id="Contact" class="bg-light"></section>
+<section class="bg-light py-">
+  <div class="container">
+    <div class="row align-items-start justify-content-center">
+
+      <!-- Left Content -->
+      <div class="col-md-5 mb-4 mb-md-0 d-flex flex-column justify-content-start" style="font-size: 24px;">
+      <h2 class="text-dark text-center text-md-start" style="font-family: Georgia, serif; font-size: 2.2rem;">
+        Contact Us
+      </h2>
+<br>
+        <p class="mb-3">
+          📞 <a href="tel:+918870969743" class="text-decoration-none">+91 88709 69743</a>
+        </p>
+        <p class="mb-3">
+          📧 <a href="mailto:info@yourhotel.com" class="text-decoration-none">info@yourhotel.com</a>
+        </p>
+        <p class="mb-4">
+          📍 123 Main Street,<br>City, Country
+        </p>
+<br>
+        <blockquote class="blockquote fst-italic" style="font-size: 22px; font-weight: bold; color: #555;">
+          "Where comfort meets elegance — your perfect stay awaits."
+        </blockquote>
+      </div>
+
+      <!-- Right Image -->
+      <div class="col-md-6 d-flex justify-content-center align-items-start">
+        <img src="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg"
+             alt="Hotel View"
+             class="img-fluid rounded shadow"
+             style="max-width: 100%; height: auto; border-radius: 15px;">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Spacer to avoid footer merge -->
+<div style="height: 50px; background-color: #f8f9fa;"></div>
+
+
+<!-- for increasing value on adult and child bar -->
+<script>
+  function updateCount(field, change) {
+    const input = document.getElementById(field);
+    let value = parseInt(input.value);
+    value += change;
+    if (value < 0) value = 0;
+    input.value = value;
+  }
+</script>
+
+>
+<!-- Footer -->
+<footer class="bg-dark text-light pt-5" id="footer" style="width: 100%; margin: 0; padding: 0;">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 mb-4 text-center">
+        <img src="logo.png" alt="PandaAtlas Logo" style="width: 80px;height: 47%;width: 80%;">
+        <p class="text-light" style="font-size: 0.95rem; line-height: 1.6;">
+          Our caters reached the doors of the Late Chief Minister of Tamil Nadu J Jayalalithaa, VVIPs, Ongars of Sattvaitha,
+          VHP, Rajalakshmi Institutions, Hindus Spiritual and Service Fair.
+        </p>
+      </div>
+      <div class="col-md-3 mb-3 text-center text-md-start">
+        <h5 class="text-uppercase mb-3 text-white">Foods</h5>
+        <ul class="list-unstyled mb-3">
+          <li><a href="#" class="text-light text-decoration-none"><i class="bi bi-chevron-right"></i> BREAKFAST MENU</a></li>
+          <li><a href="#" class="text-light text-decoration-none"><i class="bi bi-chevron-right"></i> LUNCH MENU</a></li>
+          <li><a href="#" class="text-light text-decoration-none"><i class="bi bi-chevron-right"></i> EVENING SNACKS</a></li>
+          <li><a href="#" class="text-light text-decoration-none"><i class="bi bi-chevron-right"></i> DINNER MENU</a></li>
+          <li><a href="#" class="text-light text-decoration-none"><i class="bi bi-chevron-right"></i> FOOD COUNTERS</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 mb-4 text-center text-md-start">
+        <h5 class="text-uppercase mb-3 text-white">Social Media</h5>
+        <p class="text-light">Follow us on:</p>
+        <div class="d-flex gap-3 mb-3">
+          <a href="#" class="text-light fs-5"><i class="bi bi-facebook"></i></a>
+          <a href="https://wa.me/917010680662" class="text-light fs-5" target="_blank">
+          <i class="bi bi-whatsapp"></i>
+                </a>
+
+          <a href="#" class="text-light fs-5"><i class="bi bi-youtube"></i></a>
+        </div>
+        <p class="text-light mb-0">
+          <i class="bi bi-geo-alt-fill"></i> 03, MG Road, Richmond Town,<br>
+          Bengaluru, Karnataka, 560025
+        </p>
+      </div>
+
+      <div class="col-md-3 mb-4">
+        <h5 class="text-uppercase mb-3 text-white">Subscribe Now</h5>
+        <p class="text-light">Subscribe our newsletter to get our latest updates & news.</p>
+        <form class="d-flex">
+          <input type="email" class="form-control me-2" placeholder="Enter Email">
+          <button class="btn btn-success" type="submit">
+            <i class="bi bi-send-fill"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+    <hr class="border-secondary">
+    <div class="row">
+      <div class="col text-center small text-light">
+        © 2025 PandaAtlas Services. All rights reserved.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Script -->
+<script>
+  function updateCount(field, change) {
+    const input = document.getElementById(field);
+    let value = parseInt(input.value);
+    value += change;
+    if (value < 0) value = 0;
+    input.value = value;
+  }
+</script>
+
+</body>
+</html>
