@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stylish Room Packages | Panda Atlas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #fff8e1;
+      font-family: 'Poppins', sans-serif;
+    }
+    .polaroid-card {
+      background: rgba(255, 245, 218, 0.75); /* semi-transparent background */
+      border-radius: 25px;
+      box-shadow: 0 0 8px #bc9304;
+      border: 4px solid #fecd37;
+      overflow: hidden;
+      padding: 18px 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      transition: transform 0.3s;
+      height: 100%;
+
+      /* Optional frosted glass effect */
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .polaroid-card:hover {
+      transform: scale(1.04) rotate(-1deg);
+      box-shadow: 0 2px 20px #ffd670;
+    }
+    .polaroid-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 18px;
+      margin-bottom: 14px;
+    }
+    .price-text {
+      font-size: 15px;
+      font-weight: 600;
+      color: #8d6e00;
+      margin-bottom: 10px;
+    }
+    .view-btn {
+      background: #ffea8a;
+      border-radius: 8px;
+      border: 1.5px solid #f8c438;
+      color: #5c4200;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 6px 22px;
+      box-shadow: 0 0 4px #ffef9e;
+      text-decoration: none;
+    }
+    .view-btn:hover {
+      background: #ffc70d;
+      color: #fffbe9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+    <h2 class="text-center mb-4" style="font-weight:bold;color:#b08804;">Our Room Packages</h2>
+    <div class="row g-4">
+
+      <div class="col-md-3">
+        <div class="polaroid-card">
+          <img src="r1.jpg" alt="room1" class="polaroid-img">
+          <div class="price-text">Starts from: ₹29,999</div>
+          <a href="form.php" class="view-btn">View</a>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="polaroid-card">
+          <img src="r2.jpg" alt="room2" class="polaroid-img">
+          <div class="price-text">Starts from: ₹19,999</div>
+          <a href="form.php" class="view-btn">View</a>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="polaroid-card">
+          <img src="r3.jpg" alt="room3" class="polaroid-img">
+          <div class="price-text">Starts from: ₹35,999</div>
+          <a href="form.php" class="view-btn">View</a>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="polaroid-card">
+          <img src="r4.jpg" alt="room4" class="polaroid-img">
+          <div class="price-text">Starts from: ₹16,999</div>
+          <a href="form.php" class="view-btn">View</a>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="polaroid-card">
+          <img src="r5.jpg" alt="room5" class="polaroid-img">
+          <div class="price-text">Starts from: ₹11,999</div>
+          <a href="form.php" class="view-btn">View</a>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="polaroid-card">
+          <img src="r6.jpg" alt="room6" class="polaroid-img">
+          <div class="price-text">Starts from: ₹26,299</div>
+          <a href="form.php" class="view-btn">View</a>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="polaroid-card">
+          <img src="r7.jpg" alt="room7" class="polaroid-img">
+          <div class="price-text">Starts from: ₹39,999</div>
+          <a href="form.php" class="view-btn">View</a>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="polaroid-card">
+          <img src="r8.jpg" alt="room8" class="polaroid-img">
+          <div class="price-text">Starts from: ₹6,999</div>
+          <a href="form.php" class="view-btn">View</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
